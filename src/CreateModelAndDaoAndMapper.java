@@ -14,6 +14,7 @@ import org.mybatis.generator.internal.DefaultShellCallback;
 
 public class CreateModelAndDaoAndMapper {
 	public static void main(String[] args) {
+		
 		List<String> warnings = new ArrayList<String>();
 		boolean overwrite = true;
 		String genCfg = "/mbg_configuration.xml";
