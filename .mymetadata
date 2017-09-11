@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ideagood"
+  id="myeclipse.1423560619354"
+  context-root="/ideagood"
+  j2ee-spec="5.0"
+  archive="ideagood.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+
