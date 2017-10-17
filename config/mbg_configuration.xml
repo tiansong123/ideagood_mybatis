@@ -41,7 +41,7 @@
 		<!-- schema你的数据库，tableName表明，domainObjectName对应你的javabean类名，是否生成相应的example -->
 
 			
-			<table tableName="ucm_unbind_record" domainObjectName="UnbindRecord"
+			<table tableName="ucm_system_log" domainObjectName="Systemlog"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false"></table>	

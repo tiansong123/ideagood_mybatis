@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pptv.ucm.dao.SubscriberMapper" >
+  <resultMap id="BaseResultMap" type="com.pptv.ucm.entity.Subscriber" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="third_uid" property="thirdUid" jdbcType="VARCHAR" />
+    <result column="user_account" property="userAccount" jdbcType="VARCHAR" />
+    <result column="current_mac" property="currentMac" jdbcType="VARCHAR" />
+    <result column="partner_code" property="partnerCode" jdbcType="VARCHAR" />
+    <result column="fr_account_type" property="frAccountType" jdbcType="INTEGER" />
+    <result column="active_time" property="activeTime" jdbcType="TIMESTAMP" />
+    <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+    <result column="appid" property="appid" jdbcType="INTEGER" />
+    <result column="appver" property="appver" jdbcType="VARCHAR" />
+    <result column="user_token" property="userToken" jdbcType="VARCHAR" />
+    <result column="appplt" property="appplt" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, third_uid, user_account, current_mac, partner_code, fr_account_type, active_time, 
+    last_login_time, appid, appver, user_token, appplt
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ucm_subscriber_0
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ucm_subscriber_0
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.pptv.ucm.entity.Subscriber" >
+    insert into ucm_subscriber_0 (id, third_uid, user_account, 
+      current_mac, partner_code, fr_account_type, 
+      active_time, last_login_time, appid, 
+      appver, user_token, appplt
+      )
+    values (#{id,jdbcType=INTEGER}, #{thirdUid,jdbcType=VARCHAR}, #{userAccount,jdbcType=VARCHAR}, 
+      #{currentMac,jdbcType=VARCHAR}, #{partnerCode,jdbcType=VARCHAR}, #{frAccountType,jdbcType=INTEGER}, 
+      #{activeTime,jdbcType=TIMESTAMP}, #{lastLoginTime,jdbcType=TIMESTAMP}, #{appid,jdbcType=INTEGER}, 
+      #{appver,jdbcType=VARCHAR}, #{userToken,jdbcType=VARCHAR}, #{appplt,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pptv.ucm.entity.Subscriber" >
+    insert into ucm_subscriber_0
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="thirdUid != null" >
+        third_uid,
+      </if>
+      <if test="userAccount != null" >
+        user_account,
+      </if>
+      <if test="currentMac != null" >
+        current_mac,
+      </if>
+      <if test="partnerCode != null" >
+        partner_code,
+      </if>
+      <if test="frAccountType != null" >
+        fr_account_type,
+      </if>
+      <if test="activeTime != null" >
+        active_time,
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time,
+      </if>
+      <if test="appid != null" >
+        appid,
+      </if>
+      <if test="appver != null" >
+        appver,
+      </if>
+      <if test="userToken != null" >
+        user_token,
+      </if>
+      <if test="appplt != null" >
+        appplt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="thirdUid != null" >
+        #{thirdUid,jdbcType=VARCHAR},
+      </if>
+      <if test="userAccount != null" >
+        #{userAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="currentMac != null" >
+        #{currentMac,jdbcType=VARCHAR},
+      </if>
+      <if test="partnerCode != null" >
+        #{partnerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="frAccountType != null" >
+        #{frAccountType,jdbcType=INTEGER},
+      </if>
+      <if test="activeTime != null" >
+        #{activeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appid != null" >
+        #{appid,jdbcType=INTEGER},
+      </if>
+      <if test="appver != null" >
+        #{appver,jdbcType=VARCHAR},
+      </if>
+      <if test="userToken != null" >
+        #{userToken,jdbcType=VARCHAR},
+      </if>
+      <if test="appplt != null" >
+        #{appplt,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pptv.ucm.entity.Subscriber" >
+    update ucm_subscriber_0
+    <set >
+      <if test="thirdUid != null" >
+        third_uid = #{thirdUid,jdbcType=VARCHAR},
+      </if>
+      <if test="userAccount != null" >
+        user_account = #{userAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="currentMac != null" >
+        current_mac = #{currentMac,jdbcType=VARCHAR},
+      </if>
+      <if test="partnerCode != null" >
+        partner_code = #{partnerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="frAccountType != null" >
+        fr_account_type = #{frAccountType,jdbcType=INTEGER},
+      </if>
+      <if test="activeTime != null" >
+        active_time = #{activeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appid != null" >
+        appid = #{appid,jdbcType=INTEGER},
+      </if>
+      <if test="appver != null" >
+        appver = #{appver,jdbcType=VARCHAR},
+      </if>
+      <if test="userToken != null" >
+        user_token = #{userToken,jdbcType=VARCHAR},
+      </if>
+      <if test="appplt != null" >
+        appplt = #{appplt,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pptv.ucm.entity.Subscriber" >
+    update ucm_subscriber_0
+    set third_uid = #{thirdUid,jdbcType=VARCHAR},
+      user_account = #{userAccount,jdbcType=VARCHAR},
+      current_mac = #{currentMac,jdbcType=VARCHAR},
+      partner_code = #{partnerCode,jdbcType=VARCHAR},
+      fr_account_type = #{frAccountType,jdbcType=INTEGER},
+      active_time = #{activeTime,jdbcType=TIMESTAMP},
+      last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      appid = #{appid,jdbcType=INTEGER},
+      appver = #{appver,jdbcType=VARCHAR},
+      user_token = #{userToken,jdbcType=VARCHAR},
+      appplt = #{appplt,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
